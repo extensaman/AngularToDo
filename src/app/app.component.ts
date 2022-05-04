@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {Horse} from "./model/Horse";
 import {HttpClient} from "@angular/common/http";
+import {baseUrl} from "./shared/baseUrl";
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,7 @@ export class AppComponent {
   horse: Horse | undefined;
 
   constructor(private http: HttpClient) {
-    this.http.get<Horse>('http://localhost:8081/controller_war/')
+    this.http.get<Horse>(baseUrl)
         .subscribe(result => this.horse = result);
   }
 }
