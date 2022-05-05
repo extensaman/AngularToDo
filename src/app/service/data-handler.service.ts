@@ -13,10 +13,10 @@ export class DataHandlerService {
   constructor(private http: HttpClient) { }
 
   getCategories(): Observable<Category[]>{
-    return this.http.get<Category[]>('http://localhost:8081/controller_war_exploded/');
+    return this.http.get<Category[]>('http://localhost:8081/сontroller_war_exploded/');
   }
 
   getHorses(): Observable<Horse[]> {
-    return this.http.get<Horse[]>('http://localhost:8081/controller_war_exploded/horse');
+    return this.http.get<Horse[]>('http://localhost:8081/сontroller_war_exploded/horse');
   }
 }
