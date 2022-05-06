@@ -4,10 +4,10 @@ import {Horse} from "../../model/Horse";
 
 @Component({
   selector: 'app-tasks',
-  templateUrl: './tasks.component.html',
-  styleUrls: ['./tasks.component.css']
+  templateUrl: './table-of-entity.component.html',
+  styleUrls: ['./table-of-entity.component.css']
 })
-export class TasksComponent implements OnInit {
+export class TableOfEntityComponent implements OnInit {
 
   horses: Horse[] | undefined;
 

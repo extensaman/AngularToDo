@@ -7,14 +7,15 @@ import {HttpClientModule} from "@angular/common/http";
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatToolbarModule} from '@angular/material/toolbar';
-import { CategoriesComponent } from './views/categories/categories.component';
-import { TasksComponent } from './views/tasks/tasks.component';
+import {MatButtonModule} from '@angular/material/button';
+import { EntityComponent } from './views/entity/entity.component';
+import { TableOfEntityComponent } from './views/tableOfEntity/table-of-entity.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CategoriesComponent,
-    TasksComponent
+    EntityComponent,
+    TableOfEntityComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +23,8 @@ import { TasksComponent } from './views/tasks/tasks.component';
     HttpClientModule,
     FlexLayoutModule,
     MatProgressSpinnerModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

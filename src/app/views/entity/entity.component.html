@@ -1,14 +1,22 @@
-<mat-toolbar color="--bs-gray">
-  <ul class="mainLoc" >
-    <li class="nav-item" *ngFor="let category of categories" fxFlex="100 0 0">
-      <a class="nav-link text-white " href="../pages/dashboard.html">
-        <!--          <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+<mat-toolbar fxLayout="row" fxLayoutAlign="space-between center" color="primary">
+
+    <div >Horse Farm "Амур-Тужур"</div>
+    <div >
+
+      <a mat-button class="ms-3" (click)="stub()" *ngFor="let entity of entities">
+        {{entity.title}}
+      </a>
+    </div>
+<!--  <ul class="mainLoc" fxFlex="100">
+    <li class="nav-item" *ngFor="let category of categories">
+      <a class="btn bg-gradient-primary mt-4 w-100" href="../pages/dashboard.html">
+        &lt;!&ndash;          <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                     <i class="material-icons opacity-10">dashboard</i>
-                  </div>-->
+                  </div>&ndash;&gt;
         <span class="nav-link-text ms-1">{{category.title}}</span>
       </a>
     </li>
-    <!--     <li class="nav-item">
+    &lt;!&ndash;     <li class="nav-item">
            <a class="nav-link text-white " href="../pages/tables.html">
              <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                <i class="material-icons opacity-10">table_view</i>
@@ -74,8 +82,9 @@
              </div>
              <span class="nav-link-text ms-1">Sign Up</span>
            </a>
-         </li>-->
-  </ul>
+         </li>&ndash;&gt;
+  </ul>-->
+
 </mat-toolbar>
   <!--<aside
     class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3   bg-gradient-dark"

@@ -1,9 +1,9 @@
-import {Category} from "../model/Category";
+import {Entity} from "../model/Entity";
 import {Priority} from "../model/Priority";
 import {Task} from "../model/Task";
 
 export class TestData {
-  static categories: Category[] = [
+  static categories: Entity[] = [
     {id: 1, title: 'Работа'},
     {id: 2, title: 'Семья'},
     {id: 3, title: 'Учеба'},
