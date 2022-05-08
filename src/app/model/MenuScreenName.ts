@@ -1,4 +1,4 @@
-export class Entity {
+export class MenuScreenName {
   id: number;
   title: string;
 

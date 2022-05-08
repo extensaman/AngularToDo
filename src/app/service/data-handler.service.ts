@@ -1,24 +1,33 @@
 import {Injectable} from '@angular/core';
-import {Entity} from "../model/Entity";
+import {MenuScreenName} from "../model/MenuScreenName";
 import {Horse} from "../model/Horse";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Coach} from "../model/Coach";
-import {Subject} from "rxjs";
-import {map} from "rxjs/operators";
+import {UserData} from "../views/coach/coach.component";
+import {of} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataHandlerService {
 
-  activeEntitySubject = new Subject<number>();
+  selectedUser: UserData | undefined;
 
   constructor(private http: HttpClient) {
   }
 
-  getEntities(): Observable<Entity[]>{
-    return this.http.get<Entity[]>('http://localhost:8081/controller_war_exploded/');
+  getMenuScreenNameArray(): Observable<MenuScreenName[]>{
+    return this.http.get<MenuScreenName[]>('http://localhost:8081/controller_war_exploded/');
+  }
+
+  setSelectedUser(user : UserData) {
+    this.selectedUser = user;
+  }
+
+  getSelectedUser(): Observable<UserData> {
+    // @ts-ignore
+    return of(this.selectedUser);
   }
 
   getHorses(): Observable<Horse[]> {

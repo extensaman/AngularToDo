@@ -1,9 +1,9 @@
-import {Entity} from "../model/Entity";
+import {MenuScreenName} from "../model/MenuScreenName";
 import {Priority} from "../model/Priority";
 import {Task} from "../model/Task";
 
 export class TestData {
-  static categories: Entity[] = [
+  static categories: MenuScreenName[] = [
     {id: 1, title: 'Работа'},
     {id: 2, title: 'Семья'},
     {id: 3, title: 'Учеба'},
