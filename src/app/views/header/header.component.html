@@ -1,0 +1,16 @@
+<mat-toolbar fxLayout="row" fxLayoutAlign="space-between center" color="primary">
+
+    <div >Horse Farm "Амур-Тужур"</div>
+    <div >
+
+      <a mat-button routerLink='/horse' routerLinkActive="active" class="ms-3">
+        {{entities ? entities[0].title:'Horsess'}}
+      </a>
+      <a mat-button routerLink='/coach' routerLinkActive="active" class="ms-3">
+        {{entities ? entities[1].title:'Coachess'}}
+      </a>
+
+    </div>
+</mat-toolbar>
+
+

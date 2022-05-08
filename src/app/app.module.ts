@@ -8,14 +8,20 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
-import { EntityComponent } from './views/entity/entity.component';
-import { TableOfEntityComponent } from './views/tableOfEntity/table-of-entity.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
+import { HeaderComponent } from './views/header/header.component';
+import { HorseComponent } from './views/horse/horse.component';
+import { CoachComponent } from './views/coach/coach.component';
+import {AppRoutingModule} from "./app-routing/app-routing.module";
 
 @NgModule({
   declarations: [
     AppComponent,
-    EntityComponent,
-    TableOfEntityComponent
+    HeaderComponent,
+    HorseComponent,
+    CoachComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +30,11 @@ import { TableOfEntityComponent } from './views/tableOfEntity/table-of-entity.co
     FlexLayoutModule,
     MatProgressSpinnerModule,
     MatToolbarModule,
-    MatButtonModule
+    MatButtonModule,
+    AppRoutingModule,
+    MatTableModule,
+    MatFormFieldModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

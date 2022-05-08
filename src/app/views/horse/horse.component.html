@@ -1,5 +1,5 @@
-<div fxLayout="row">
-  <div fxFlex="100">
+<div fxLayout="row" >
+  <div fxFlex="100" *ngIf="horses">
     <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
       <!-- Navbar -->
       <!--
@@ -283,34 +283,34 @@
                   <table class="table align-items-center mb-0">
                     <thead>
                     <tr>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">#</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Nickname</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Breed
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Breed
                       </th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Suit
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Suit
                       </th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                         Specialization
                       </th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Date
                         of
                         birth
                       </th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Price
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Price
                       </th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr *ngFor="let horse of horses">
+                    <tr *ngFor="let horse of horses; let i = index">
                       <td>
-                        <div class="d-flex px-2 py-1">
+                        <div class="d-flex flex-column justify-content-center">
                           <!--<div>
                             <img src="../assets/img/small-logos/logo-xd.svg" class="avatar avatar-sm me-3" alt="xd">
                           </div>
                           <div class="d-flex flex-column justify-content-center">
                             <h6 class="mb-0 text-sm">Material XD Version</h6>
                           </div>-->
-                          {{horse.id}}
+                          {{i+1}}
                         </div>
                       </td>
                       <td>
@@ -319,27 +319,27 @@
                         </div>
                       </td>
                       <td>
-                        <div class="d-flex px-2 py-1">
+                        <div class="d-flex flex-column justify-content-center">
                           {{horse.horseDetail.breed}}
                         </div>
                       </td>
                       <td>
-                        <div class="d-flex px-2 py-1">
+                        <div class="d-flex flex-column justify-content-center">
                           {{horse.horseDetail.suit}}
                         </div>
                       </td>
                       <td>
-                        <div class="d-flex px-2 py-1">
+                        <div class="d-flex flex-column justify-content-center active">
                           {{horse.horseDetail.specialization}}
                         </div>
                       </td>
                       <td>
-                        <div class="d-flex px-2 py-1">
+                        <div class="d-flex flex-column justify-content-center">
                           {{horse.horseDetail.dateOfBirth}}
                         </div>
                       </td>
                       <td>
-                        <div class="d-flex px-2 py-1">
+                        <div class="d-flex flex-column justify-content-center">
                           {{horse.horseDetail.price}}
                         </div>
                       </td>
@@ -748,10 +748,10 @@
       </div>
     </div>-->
   </div>
-  <div fxFlex [hidden]="horses">
-    <mat-spinner></mat-spinner>
-    <h4>Loading . . . Please wait!</h4>
-  </div>
 
+
+</div>
+<div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap='10px' [hidden]="horses">
+  <p> </p><mat-spinner></mat-spinner><h6>Loading...</h6>
 </div>
 
