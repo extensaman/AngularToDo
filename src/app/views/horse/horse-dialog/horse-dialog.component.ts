@@ -1,6 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
-import { MatDialog, MatDialogRef } from "@angular/material/dialog";
-import {UserData} from "../../coach/coach.component";
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-horse-dialog',
@@ -10,10 +8,8 @@ import {UserData} from "../../coach/coach.component";
 export class HorseDialogComponent implements OnInit {
 
   constructor() {
-
   }
 
   ngOnInit(): void {
   }
-
 }

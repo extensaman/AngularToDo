@@ -3,19 +3,19 @@
   <input matInput (keyup)="applyFilter($event)" placeholder="fsdfs" #input>
 </mat-form-field>
 
-<div class="mat-elevation-z8 table-coach">
+<div class="mat-elevation-z8 table-coach" *ngIf="coaches">
   <table mat-table [dataSource]="dataSource" matSort>
 
     <!-- ID Column -->
     <ng-container matColumnDef="id">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> # </th>
       <td mat-cell *matCellDef="let row"> {{row.id}} </td>
     </ng-container>
 
-    <!-- Progress Column -->
-    <ng-container matColumnDef="progress">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Progress </th>
-      <td mat-cell *matCellDef="let row"> {{row.progress}}% </td>
+    <!-- Surname Column -->
+    <ng-container matColumnDef="surname">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Surname </th>
+      <td mat-cell *matCellDef="let row"> {{row.surname}}% </td>
     </ng-container>
 
     <!-- Name Column -->
@@ -24,10 +24,16 @@
       <td mat-cell *matCellDef="let row"> {{row.name}} </td>
     </ng-container>
 
-    <!-- Fruit Column -->
-    <ng-container matColumnDef="fruit">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Fruit </th>
-      <td mat-cell *matCellDef="let row"> {{row.fruit}} </td>
+    <!-- Patronymic Column -->
+    <ng-container matColumnDef="patronymic">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Patronymic </th>
+      <td mat-cell *matCellDef="let row"> {{row.patronymic}} </td>
+    </ng-container>
+
+    <!-- Patronymic Column -->
+    <ng-container matColumnDef="horseCount">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Horse Count </th>
+      <td mat-cell *matCellDef="let row"> {{row.coachHorses.length}} </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

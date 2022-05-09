@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {UserData} from "../coach.component";
+import {Component, OnInit} from '@angular/core';
 import {DataHandlerService} from "../../../service/data-handler.service";
+import {Coach} from "../../../model/Coach";
 
 @Component({
   selector: 'app-coach-dialog',
@@ -9,13 +9,13 @@ import {DataHandlerService} from "../../../service/data-handler.service";
 })
 export class CoachDialogComponent implements OnInit {
 
-  selectedUser: UserData | undefined;
+  selectedCoach: Coach | undefined;
 
   constructor(private dataHandler: DataHandlerService) {
   }
 
   ngOnInit(): void {
-    this.dataHandler.getSelectedUser().subscribe(user => this.selectedUser = user);
+    this.dataHandler.getSelectedCoach().subscribe(coach => this.selectedCoach = coach);
   }
 
 }
